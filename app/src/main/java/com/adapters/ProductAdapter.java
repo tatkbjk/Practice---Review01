@@ -42,15 +42,15 @@ public class ProductAdapter extends ArrayAdapter<Product> {
 
         name.setText(product.getProduct_name());
         code.setText("Code: " + product.getProduct_code());
-        price.setText(String.format("Price: %.0f đ", product.getUnit_price()));
+        price.setText(String.format("Price: %.3f đ", product.getUnit_price()));
 
-//        Glide.with(context)
-//                .load(product.getImage_link())
-//                .placeholder(R.drawable.placeholder)
-//                .error(R.drawable.placeholder)
-//                .centerCrop()
-//                .override(100, 100)
-//                .into(image);
+        Glide.with(context)
+                .load(product.getImage_link())
+                .placeholder(R.drawable.ic_launcher_foreground)
+                .error(R.drawable.ic_launcher_foreground)
+                .centerCrop()
+                .override(100, 100)
+                .into(image);
 
         return convertView;
     }
